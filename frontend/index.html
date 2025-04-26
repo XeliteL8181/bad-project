@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Финансовый трекер</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Финансовый трекер</h1>
+        
+        <div class="cards">
+            <div class="card balance">
+                <h2>Баланс</h2>
+                <div class="amount" id="balance">0 ₽</div>
+            </div>
+            
+            <div class="card savings">
+                <h2>Накопления</h2>
+                <div class="amount" id="savings">0 ₽</div>
+                <input type="number" id="savings-input" placeholder="Введите сумму">
+                <button onclick="updateSavings()">Обновить</button>
+            </div>
+        </div>
+        
+        <div class="transactions">
+            <div class="transaction-form">
+                <h2>Добавить операцию</h2>
+                <div>
+                    <label>Тип:</label>
+                    <select id="transaction-type">
+                        <option value="income">Доход</option>
+                        <option value="expense">Расход</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Сумма:</label>
+                    <input type="number" id="transaction-amount" placeholder="0.00">
+                </div>
+                <div>
+                    <label>Описание:</label>
+                    <input type="text" id="transaction-note" placeholder="Действие">
+                </div>
+                <button onclick="addTransaction()">Добавить</button>
+            </div>
+            
+            <div class="transaction-lists">
+                <div class="income-list">
+                    <h3>Доходы</h3>
+                    <ul id="incomes"></ul>
+                </div>
+                <div class="expense-list">
+                    <h3>Расходы</h3>
+                    <ul id="expenses"></ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="charts">
+            <div id="yearly-chart" class="chart"></div>
+            <div id="weekly-chart" class="chart"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

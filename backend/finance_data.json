@@ -1,0 +1,10 @@
+{
+ "balance": 0,
+ "savings": 0,
+ "incomes": [],
+ "expenses": [],
+ "yearly_stats": {},
+ "weekly_stats": {},
+ "last_reset_week": 17,
+ "last_reset_year": 2025
+}
